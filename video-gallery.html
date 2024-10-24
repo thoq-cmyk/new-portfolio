@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="videogallery.css" />
+  </head>
+  <body>
+    <h3 class="heading">Videos</h3>
+    <a href="index.html">Back to Main Page</a>
+
+    <div class="container">
+      <!-- Main video section -->
+
+      <!-- Video list section -->
+      <div class="main-video">
+        <video src="Assets/videos.mp4/video1.mp4" controls loop></video>
+        <h3 class="title">Truman Social Club Opening</h3>
+      </div>
+
+      <div class="video-list">
+        <div class="vid">
+          <video src="Assets/videos.mp4/video2.mp4" controls loop></video>
+          <h3 class="title">Boxing Night at Truman's</h3>
+        </div>
+
+        <div class="vid">
+          <video src="Assets/videos.mp4/video3.mp4" controls loop></video>
+          <h3 class="title">Working at Azo Print</h3>
+        </div>
+
+        <div class="vid">
+          <video src="Assets/videos.mp4/video4.mp4" controls loop></video>
+          <h3 class="title">Wanstead Park with Jolyan</h3>
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+
+    <script>
+      let listVideos = document.querySelectorAll(".video-list .vid");
+      let mainVideo = document.querySelector(".main-video video");
+      let title = document.querySelector(".main-video .title");
+
+      listVideos.forEach((video) => {
+        video.onclick = () => {
+          listVideos.forEach((vid) => vid.classList.remove("active"));
+          video.classList.add("active");
+
+          if (video.classList.contains("active")) {
+            let src = video.children[0].getAttribute("src"); //
+            mainVideo.src = src;
+
+            let text = video.children[1].innerHTML;
+            title.innerHTML = text;
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
