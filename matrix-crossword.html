@@ -27,7 +27,7 @@
         height: 100vh;
         position: relative;
         z-index: 2;
-        color: white; /* Crossword puzzle on top of the canvas */
+        color: green; /* Crossword puzzle on top of the canvas */
       }
 
       table {
@@ -35,7 +35,7 @@
       }
 
       .white1 {
-        background-color: white;
+        background-color: whitesmoke;
         width: 25px;
         height: 25px;
         font-size: 16px;
@@ -146,7 +146,17 @@
 
       <input type="text" id="input1" placeholder="Enter word..." /><br />
       <button onclick="submit1()">Submit</button>
+      <button onclick="showClue()">Clues</button>
       <div id="message1"></div>
+      <div
+        id="clues"
+        style="
+          color: white;
+          font-family: copperplate;
+          font-size: 16px;
+          margin-top: 10px;
+        "
+      ></div>
     </div>
 
     <script>
@@ -233,12 +243,35 @@
         if (result1 === 3) {
           document.getElementById("message1").innerHTML =
             "Congratulations! You've completed the puzzle!";
+          document.getElementById("clues").innerHTML = ""; // Clear clues on completion
         } else if (foundWord) {
           document.getElementById("message1").innerHTML = "Great! Keep going!";
+          document.getElementById("clues").innerHTML = ""; // Clear clues after a correct word
         } else {
           document.getElementById("message1").innerHTML =
             "Incorrect word, try again!";
+          document.getElementById("clues").innerHTML = ""; // Clear clues if input is incorrect
         }
+      }
+
+      function showClue() {
+        let clueMessage = "";
+
+        if (score1 === 0) {
+          clueMessage +=
+            "Clue for '5 letters, across': Acts in a theatrical production.<br />";
+        }
+        if (score2 === 0) {
+          clueMessage +=
+            "Clue for '5 letters, down': A data structure for storing multiple items.<br />";
+        }
+        if (score3 === 0) {
+          clueMessage +=
+            "Clue for '3 letters, across': A common command to start a program.<br />";
+        }
+
+        document.getElementById("clues").innerHTML =
+          clueMessage || "All words solved!";
       }
     </script>
   </body>
