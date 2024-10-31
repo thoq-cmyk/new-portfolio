@@ -163,17 +163,26 @@
 
     <script>
       // Matrix animation logic
-      var canvas = document.getElementById("matrix"),
-        screen = window.screen,
-        width = (canvas.width = screen.width),
-        height = (canvas.height = screen.height),
-        columns = Array(256).join(0).split(""),
-        context = canvas.getContext("2d"),
-        characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()";
+      var canvas = document.getElementById("matrix");
+      var context = canvas.getContext("2d");
+      var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()";
+      var columns = [];
+      var screenWidth = window.innerWidth;
+      var screenHeight = window.innerHeight;
 
-      setInterval(function () {
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = Array(Math.floor(canvas.width / 10)).fill(0); // Reset columns based on new width
+      }
+
+      // Set canvas size on load and resize
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      function drawMatrix() {
         context.fillStyle = "rgba(0, 0, 0, 0.05)"; // Slightly transparent black background
-        context.fillRect(0, 0, width, height);
+        context.fillRect(0, 0, canvas.width, canvas.height);
         context.fillStyle = "#0F0"; // Green Matrix-style characters
 
         columns = columns.map(function (y, index) {
@@ -182,9 +191,11 @@
           );
           context.fillText(text, index * 10, y);
           y += 10;
-          return y > height ? 0 : y; // Reset at bottom of screen
+          return y > canvas.height ? 0 : y; // Reset at bottom of screen
         });
-      }, 33);
+      }
+
+      setInterval(drawMatrix, 33);
 
       // Crossword puzzle logic
       var score1 = 0;
