@@ -14,12 +14,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #34739eff;
-  background-color: #34739eff;
+  color: white;
+  background-color: white;
 }
 
 .heading {
-  color: #244d6cff;
+  color: white;
   font-size: 40px;
   text-align: center;
   padding: 10px;
@@ -34,7 +34,7 @@ body {
 }
 
 .container .main-video {
-  background: #244d6cff;
+  background: #34739eff;
   border-radius: 5px;
   padding: 10px;
 }
@@ -45,14 +45,14 @@ body {
 }
 
 .container .main-video .title {
-  color: black;
+  color: white;
   font-size: 23px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
 .container .video-list {
-  background: #34739eff;
+  background: white;
   border-radius: 5px;
   height: 520px;
   overflow-y: scroll;
@@ -64,12 +64,12 @@ body {
 }
 
 .container .video-list::-webkit-scrollbar-track {
-  background: #244d6cff;
+  background: white;
   border-radius: 50px;
 }
 
 .container .video-list::-webkit-scrollbar-thumb {
-  background: #244d6cff;
+  background: white;
   border-radius: 50px;
 }
 
@@ -77,11 +77,11 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: #244d6cff;
+  background: #34739eff;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
+  border: 5px solid #34739eff;
   cursor: pointer;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .container .video-list .vid.active {
-  background: blue;
+  background: #34739eff;
 }
 
 .container .video-list .vid.active .title {
