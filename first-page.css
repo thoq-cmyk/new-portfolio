@@ -90,3 +90,42 @@ header {
   margin-right: 30px;
   border-radius: 10% 30% 50% 70%;
 }
+/* Basic footer and icon styling */
+.social-footer {
+  display: flex;
+  justify-content: center; /* Center-align icons */
+  align-items: center;
+  gap: 20px; /* Space between icons */
+  padding: 20px;
+  background-color: #333;
+}
+
+.social-footer i {
+  font-size: 24px; /* Default icon size */
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.social-footer i:hover {
+  transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-footer {
+    gap: 15px;
+  }
+  .social-footer i {
+    font-size: 20px; /* Slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .social-footer {
+    flex-direction: column; /* Stack icons vertically on small screens */
+    gap: 10px;
+  }
+  .social-footer i {
+    font-size: 18px; /* Smaller icon size on mobile */
+  }
+}
