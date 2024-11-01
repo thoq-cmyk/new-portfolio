@@ -9,3 +9,6 @@ In creating my own video gallery I have followed this tutorial :https://www.yout
 I have styled my pages using :https://coolors.co/colors the image selector picked a pallette from my profile pic.
 I have created a image gallaery following :https://www.youtube.com/watch?v=RuJyYiRttpI
 My first page is linked with all other pages I belive the website is now fully operatiional to be used as an online portfolio.
+
+
+<img width="1032" alt="Screenshot 2024-10-31 at 23 58 19" src="https://github.com/user-attachments/assets/a885815e-9212-443c-9dcf-ca72c22e505d">
