@@ -124,13 +124,10 @@ header {
   .social-footer {
     flex-direction: column; /* Stack icons vertically on small screens */
     gap: 10px;
+    background-color: white;
   }
   .social-footer i {
     font-size: 18px; /* Smaller icon size on mobile */
-  }
-}
-@media (max-width: 768px) {
-  .sidebar {
-    right: 0; /* Make sure the sidebar can be shown on smaller screens */
+    flex-direction: column;
   }
 }
