@@ -98,6 +98,7 @@ header {
   gap: 20px; /* Space between icons */
   padding: 20px;
   background-color: #333;
+  color: white;
 }
 
 .social-footer i {
@@ -130,4 +131,12 @@ header {
     font-size: 18px; /* Smaller icon size on mobile */
     flex-direction: column;
   }
+}
+.social-footer i.fa-instagram,
+.social-footer i.fa-linkedin,
+.social-footer i.fa-strava,
+.social-footer i.fa-github,
+.social-footer i.fa-chess,
+.sidebar i {
+  color: white; /* Set specific icons to white */
 }
