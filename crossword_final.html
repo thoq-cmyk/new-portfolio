@@ -93,6 +93,8 @@
 
       <input type="text" id="input1" placeholder="Enter word..." /><br />
       <button onclick="submit1()">Submit</button>
+      <button onclick="showClue()">Show Clues</button>
+      <!-- New button for showing clues -->
       <div id="message1"></div>
       <div id="clues"></div>
       <!-- Added div for clues -->
@@ -174,6 +176,7 @@
             "Clue for '3 letters, across': A common command to start a program.<br />";
         }
 
+        console.log(clueMessage); // Debugging line to check clueMessage
         document.getElementById("clues").innerHTML =
           clueMessage || "All words solved!";
       }
