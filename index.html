@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="http-equiv" content="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="first-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Old Newspaper Font.ttf" />
+    <title>My Portfolio</title>
+    <style>
+      @font-face {
+        font-family: 'Old Newspaper';
+        src: url('Old Newspaper Font.ttf') format('truetype');
+      }
+
+      body {
+        font-family: 'Old Newspaper', serif; /* Set Old Newspaper as the main font */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll when sidebar is open */
+        background-color: #f0f0f0; /* Light background for better contrast */
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #333; /* Add background color for visibility */
+        color: white;
+        border: 2px solid red; /* Debugging style */
+      }
+
+      .avatar {
+        width: 140px;
+        height: 160px;
+        border-radius: 50%;
+        margin-right: 40px;
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Start hidden */
+        width: 250px;
+        height: 100%;
+        background-color: #a96949ff;
+        color: white;
+        transition: left 0.3s ease;
+        padding: 20px;
+        z-index: 1000; /* Ensure it appears above other content */
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 15px 0;
+      }
+
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+      }
+
+      #menu-icon {
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        margin-left: 0; /* Aligns the menu icon to the left */
+        padding: 10px; /* Add some padding for better clickable area */
+        border: 2px solid blue; /* Debugging style */
+      }
+
+      /* Close button styles */
+      .close-button {
+        background-color: #a96949ff; /* Match the sidebar background */
+        color: black; /* Text color */
+        border: none;
+        padding: 10px 15px; /* Padding around button */
+        cursor: pointer; /* Pointer cursor */
+        margin-left: -15px;
+        margin-top: -15px; /* Space above the button */
+        font-family: 'Old Newspaper', serif; /* Match font style
