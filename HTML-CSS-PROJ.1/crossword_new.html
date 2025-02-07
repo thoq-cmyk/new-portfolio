@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <a href="index.html">Back to Main Page</a>
+
+    <title>Word Puzzle</title>
+    <style>
+      .white1 {
+        background-color: #34739eff;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        font-family: copperplate;
+        border-collapse: collapse;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .white2 {
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        font-family: copperplate;
+        border-collapse: collapse;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+      .table-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the content horizontally */
+        justify-content: center; /* Center the content vertically */
+        height: 100vh; /* Make the container full height */
+      }
+      table {
+        padding: 40px;
+      }
+      h3 {
+        font-family: copperplate;
+        font-weight: bold;
+        font-size: larger;
+        text-align: center; /* Center the title */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="table-container">
+      <h3>Crossword Puzzle</h3>
+      <table class="table1">
+        <!-- this is the first line it is PLAYS.-->
+        <tr>
+          <td id="a1" class="white1"></td>
+          <td id="a2" class="white1"></td>
+          <td id="a3" class="white1"></td>
+          <td id="a4" class="white1"></td>
+          <td id="a5" class="white1"></td>
+        </tr>
+        <!-- R (a>r<rays) -->
+        <tr>
+          <td class="white2"></td>
+          <td class="white2"></td>
+          <td id="a6" class="white1"></td>
+          <td class="white2"></td>
+          <td class="white2"></td>
+        </tr>
+        <!-- second R (ar>r<ays) -->
+        <tr>
+          <td class="white2"></td>
+          <td class="white2"></td>
+          <td id="a7" class="white1"></td>
+          <td id="a12" class="white1"></td>
+          <td id="a13" class="white1"></td>
+        </tr>
+        <!-- this is the second A (ARR>A<YS) -->
+        <tr>
+          <td class="white2"></td>
+          <td class="white2"></td>
+          <td id="a8" class="white1"></td>
+          <td class="white2"></td>
+          <td class="white2"></td>
+        </tr>
+        <!-- this is Y (ARRA>Y<S) -->
+        <tr>
+          <td class="white2"></td>
+          <td class="white2"></td>
+          <td id="a9" class="white1"></td>
+          <td class="white2"></td>
+          <td class="white2"></td>
+        </tr>
+      </table>
+
+      <input type="text" id="input1" placeholder="Enter word..." /><br />
+      <button onclick="submit1()">Submit</button>
+      <div id="message1"></div>
+      <div id="clues"></div>
+      <!-- Added div for clues -->
+    </div>
+
+    <script>
+      var score1 = 0;
+      var score2 = 0;
+      var score3 = 0;
+
+      var list1 = ["plays", "array", "run"];
+      var letters1 = [
+        "P",
+        "L",
+        "A",
+        "Y",
+        "S",
+        "A",
+        "R",
+        "R",
+        "A",
+        "Y",
+        "R",
+        "U",
+        "N",
+      ];
+
+      function submit1() {
+        var enterWord = document
+          .getElementById("input1")
+          .value.trim()
+          .toLowerCase();
+        document.getElementById("input1").value = ""; // Clear input field
+
+        if (enterWord === list1[0]) {
+          score1 = 1;
+          document.getElementById("a1").innerHTML = letters1[0];
+          document.getElementById("a2").innerHTML = letters1[1];
+          document.getElementById("a3").innerHTML = letters1[2];
+          document.getElementById("a4").innerHTML = letters1[3];
+          document.getElementById("a5").innerHTML = letters1[4];
+        } else if (enterWord === list1[1]) {
+          score2 = 1;
+          document.getElementById("a3").innerHTML = letters1[5];
+          document.getElementById("a6").innerHTML = letters1[6];
+          document.getElementById("a7").innerHTML = letters1[7];
+          document.getElementById("a8").innerHTML = letters1[8];
+          document.getElementById("a9").innerHTML = letters1[9];
+        } else if (enterWord === list1[2]) {
+          score3 = 1;
+          document.getElementById("a7").innerHTML = letters1[10];
+          document.getElementById("a12").innerHTML = letters1[11];
+          document.getElementById("a13").innerHTML = letters1[12];
+        }
+
+        var result1 = score1 + score2 + score3;
+        if (result1 === 3) {
+          document.getElementById("message1").innerHTML = "Congratulations!";
+        } else {
+          document.getElementById("message1").innerHTML = "!";
+        }
+
+        showClue(); // Call showClue to display clues
+      }
+
+      function showClue() {
+        let clueMessage = "";
+
+        if (score1 === 0) {
+          clueMessage +=
+            "Clue for '5 letters, across': Acts in a theatrical production.<br />";
+        }
+        if (score2 === 0) {
+          clueMessage +=
+            "Clue for '5 letters, down': A data structure for storing multiple items.<br />";
+        }
+        if (score3 === 0) {
+          clueMessage +=
+            "Clue for '3 letters, across': A common command to start a program.<br />";
+        }
+
+        console.log(clueMessage); // Debugging line to check clueMessage
+        document.getElementById("clues").innerHTML =
+          clueMessage || "All words solved!";
+      }
+    </script>
+  </body>
+</html>

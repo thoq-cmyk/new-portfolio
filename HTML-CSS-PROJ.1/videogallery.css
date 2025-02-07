@@ -1,0 +1,128 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Copperplate", sans-serif;
+  font-weight: normal;
+  background-color: #2b2d42;
+}
+
+.link {
+  position: relative;
+  bottom: 0;
+  left: 15px; /* Adjust left margin if needed */
+  margin-bottom: 20px;
+  color: #8ecae6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #8ecae6;
+  background-color: #2b2d42;
+}
+
+.heading {
+  color: 2b2d42;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Container styling */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Main Video Styling */
+.container .main-video {
+  background: #3a3d5c;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.container .main-video video {
+  width: 100%;
+  border-radius: 8px;
+  border: 4mm ridge #8ecae6;
+}
+
+.container .main-video .title {
+  color: #8ecae6;
+  font-size: 23px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* Video List Styling */
+.container .video-list {
+  background: #3a3d5c;
+  border-radius: 8px;
+  height: 520px;
+  overflow-y: scroll;
+}
+
+/* Custom scrollbar styling */
+.container .video-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.container .video-list::-webkit-scrollbar-track {
+  background: #8ecae6;
+  border-radius: 50px;
+}
+
+.container .video-list::-webkit-scrollbar-thumb {
+  background: #219ebc;
+  border-radius: 50px;
+}
+
+.container .video-list .vid {
+  display: grid;
+  align-items: center;
+  gap: 15px;
+  background: #3a3d5c;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  border: 4mm ridge#8ecae6;
+  cursor: pointer;
+}
+
+.container .video-list .vid video {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.container .video-list .vid:hover {
+  background: #219ebc;
+}
+
+.container .video-list .vid.active {
+  background: #8ecae6;
+}
+
+.container .video-list .vid.active .title {
+  color: #2b2d42;
+}
+
+@media (max-width: 991px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

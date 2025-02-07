@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="http-equiv" content="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="first-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>My Portfolio</title>
+    <style>
+      @font-face {
+        font-family: 'SewnTight';
+        src: url('SewnTight.ttf') format('truetype'); /* Include the SewnTight font */
+      }
+      @font-face {
+        font-family: 'Ysgarth';
+        src: url('Ysgarth.ttf') format('truetype'); /* Added Ysgarth font */
+      }
+      @font-face {
+        font-family: 'Old Newspaper';
+        src: url('Old Newspaper Font.ttf') format('truetype');
+      }
+
+      body {
+        font-family: 'Old Newspaper', serif; /* Set Old Newspaper as the main font */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll when sidebar is open */
+        background-image: url('Free Folded Paper Textures/6.png'); /* Set the new background image */
+        background-size: cover; /* Ensure the image covers the entire page */
+        background-position: center; /* Center the background image */
+        width: 100vw; /* Set width to 100% of the viewport width */
+        height: 100vh; /* Set height to 100% of the viewport height */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: flex-start; /* Align items to the top */
+      }
+
+      header {
+        /* Align content to the center */
+        padding: 20px; /* Increased padding to lower the header */
+        background-color: transparent; /* Remove background color */
+        color: white; /* Text color */
+        font-family: 'SewnTight', sans-serif; /* Use SewnTight font */
+        font-size: 24px; /* Adjust font size if necessary */
+        width: 100%; /* Ensure header takes full width */
+        text-align: center; /* Center text in header */
+        margin-top: 20px; /* Space above the header */
+      }
+
+      .avatar {
+        width: 140px;
+        height: 140px; /* Keep the height */
+        border-radius: 0; /* Change to square */
+        background-size: cover; /* Ensure the image covers the div */
+        background-position: center; /* Center the image */
+        transition: transform 0.3s; /* Smooth transition for hover effect */
+        border: 5px solid transparent; /* Add a black frame around the avatar */
+        margin-top: 20px; /* Space above the avatar */
+        background-image: url('Assets/Images/Untitled.png'); /* Updated image */
+      }
+
+      .avatar:hover {
+        transform: scale(1.2); /* Scale up slightly on hover */
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0; /* Start visible */
+        width: 100%; /* Full width */
+        height: 60px; /* Adjust height */
+        background-color: #000; /* Fallback background color */
+        color: white;
+        padding: 20px;
+        z-index: 1000; /* Ensure it appears above other content */
+        display: flex; /* Use flexbox for layout */
+        align-items: center; /* Center items vertically */
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex; /* Align items horizontally */
+      }
+
+      .sidebar ul li {
+        margin: 0 15px; /* Space between items */
+      }
+
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Styles for introduction and contact sections */
+      #introduction {
+        margin: 10px; /* Reduced margin for a more compact layout */
+        max-width: 600px; /* Set maximum width */
+        margin-left: auto; /* Center the section */
+        margin-right: auto; /* Center the section */
+        font-family: 'Old Newspaper', serif; /* Use Old Newspaper font for these sections */
+        font-style: italic; /* Ensure it's italic */
+        font-size: larger;
+        background-color: transparent; /* Remove background image */
+        color: white; /* Change text color to white */
+      }
+
+      #contact {
+        margin: 10px; /* Reduced margin for a more compact layout */
+        max-width: 600px; /* Set maximum width */
+        margin-left: auto; /* Center the section */
+        margin-right: auto; /* Center the section */
+        font-family: 'Old Newspaper', serif; /* Use Old Newspaper font for these sections */
+        font-style: italic; /* Ensure it's italic */
+        background-color: transparent; /* Remove white background */
+        padding: 15px; /* Adjusted padding */
+        border-radius: 5px; /* Add some rounding to the corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        color: white; /* Change text color to white */
+      }
+
+      /* Change text color for form elements to white */
+      #contact label,
+      #contact input,
+      #contact textarea,
+      #contact button {
+        color: white; /* Set text color to white */
+      }
+
+      /* Button hover effect */
+      #contact button:hover {
+        background-color: transparent; /* Ensure background is transparent */
+        border-radius: 20% 45% 60%; /* Apply border-radius */
+      }
+
+      /* Style adjustments for the main content to prevent it from being hidden behind the sidebar */
+      main {
+        transition: margin-left 0.3s ease; /* Smooth transition for main content */
+        padding: 15px; /* Add padding to main */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: row; /* Arrange children in a row */
+        flex: 1; /* Allow main content to grow and fill available space */
+        max-width: 800px; /* Set a maximum width for the main content */
+        margin: 0 auto; /* Center the main content */
+      }
+
+      footer {
+        background-color: transparent; /* Remove background for footer */
+        color: white; /* Text color */
+        text-align: center; /* Center-align footer content */
+        padding: 20px; /* Padding around footer */
+      }
+
+      footer i {
+        margin: 0 10px; /* Space between icons */
+        font-size: 24px; /* Icon size */
+        cursor: pointer; /* Pointer cursor for hover effect */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="avatar"></div>
+      <h1>Tanz Hoque</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="https://thoq-cmyk.github.io/asteroid-game/">Asteroid Game</a></li>
+        <li><a href="/Users/tanzhoq/Desktop/HTML-CSS-PROJ.1-main/Assets/junior software cv 2025.pdf">CV</a></li>
+        <li><a href="crossword_final.html">Crossword Puzzle</a></li>
+        <li><a href="image-gallery.html">Gallery</a></li>
+        <li><a href="video-gallery.html">Video</a></li>
+        
+      </ul>
+    </div>
+
+    <section id="introduction">
+      <h2>About me</h2>
+      <p>
+        I'm Tanz, a Junior Software Developer based in London with expertise in JavaScript, Python, React, Node.js, Django, and MongoDB. With a background in print and design at Azo Print, I developed strong problem-solving skills and an eye for detail, which now translate into my work as a developer.
+
+I hold a BA in Film, Media, and Journalism from Queen Mary University, giving me a unique perspective on user experience and storytelling in digital products. Passionate about building scalable, user-focused applications, I thrive in collaborative environments and enjoy tackling complex challenges with creative solutions.
+      </p>
+    </section>
+
+    <main>
+      <!-- Main content can go here -->
+    </main>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="3" required></textarea>
+
+        <button type="submit" style="color: black; font-family: 'Old Newspaper', serif; background-color: white; border: white;">Send Message</button>
+      </form>
+    </section>
+
+    <footer class="social-footer" style="background-color: transparent; color: white;">
+      <a
+        href="https://www.instagram.com/tanz.hoq"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a
+        href="https://letterboxd.com/thoq"
+        target="_blank"
+        aria-label="Letterboxd"
+      >
+        <i class="fa-brands fa-letterboxd"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/tanz-hoque-b68b29192/"
+        target="_blank"
+        aria-label="LinkedIn"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a
+        href="https://www.strava.com/athletes/tanz%20hoq"
+        target="_blank"
+        aria-label="Strava"
+      >
+        <i class="fa-brands fa-strava"></i>
+      </a>
+      <a
+        href="https://github.com/thoq-cmyk"
+        target="_blank"
+        aria-label="GitHub"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.chess.com" target="_blank" aria-label="Chess">
+        <i class="fa-solid fa-chess"></i>
+      </a>
+    </footer>
+
+    <script>
+      // Removed toggle function as the sidebar is now always visible
+    </script>
+    <!-- Force update -->
+  </body>
+</html>
