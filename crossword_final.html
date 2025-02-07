@@ -6,12 +6,24 @@
 
     <title>Word Puzzle</title>
     <style>
+      @font-face {
+        font-family: 'Quick Pencil';
+        src: url('QuickPencil-Regular 2.ttf') format('truetype'); /* Include the Quick Pencil font */
+      }
+
+      body {
+        background-image: url('/Users/tanzhoq/Desktop/HTML-CSS-PROJ.1-main/Free Folded Paper Textures/Texture 8.jpg'); /* Set the background image */
+        background-size: cover; /* Ensure the image covers the entire page */
+        background-position: center; /* Center the background image */
+        font-family: 'Quick Pencil', sans-serif; /* Set the font for the crossword puzzle */
+      }
+
       .white1 {
         background-color: #34739eff;
         width: 25px;
         height: 25px;
         font-size: 16px;
-        font-family: copperplate;
+        font-family: quick pencil;
         border-collapse: collapse;
         border: 1px solid black;
         text-align: center;
@@ -21,7 +33,7 @@
         width: 25px;
         height: 25px;
         font-size: 16px;
-        font-family: copperplate;
+        font-family: quick pencil;
         border-collapse: collapse;
         border: 1px solid transparent;
         text-align: center;
@@ -37,10 +49,16 @@
         padding: 40px;
       }
       h3 {
-        font-family: copperplate;
+        font-family: quick pencil;
         font-weight: bold;
-        font-size: larger;
+        font-size: 30px;
         text-align: center; /* Center the title */
+      }
+
+      /* Button styles */
+      button {
+        font-family: 'Quick Pencil', sans-serif; /* Set font for buttons */
+        font-size: larger;
       }
     </style>
   </head>
