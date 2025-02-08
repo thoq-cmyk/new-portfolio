@@ -7,10 +7,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: whitesmoke
+  align-items: center;
+  /* background-color: white; */ /* Commented out to allow background image */
 }
 header {
-  background-color: white;
+  
   flex: 1 0 auto;
   margin-left: 15px;
   margin-right: 15px;
@@ -27,7 +28,7 @@ header {
 }
 /* Contact Form Styles */
 #contact {
-  background-color: #aeb4b7ff;
+  background-color: white; /* Change this back to white */
   padding: 20px;
   border-radius: 5px;
   margin: 20px 0;
