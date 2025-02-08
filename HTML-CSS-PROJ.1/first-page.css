@@ -7,10 +7,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #34739eff;
+  color: whitesmoke
 }
 header {
-  background-color: #34739eff;
+  background-color: white;
   flex: 1 0 auto;
   margin-left: 15px;
   margin-right: 15px;
@@ -139,4 +139,9 @@ header {
 .social-footer i.fa-chess,
 .sidebar i {
   color: white; /* Set specific icons to white */
+}
+.sidebar {
+  background-color: #333;
+  color:white;
+  
 }
