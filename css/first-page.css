@@ -8,13 +8,16 @@ body {
   display: flex;
   flex-direction: column;
   color: #34739eff;
+  background-image: url('../6 (1).png'); /* Set the background image */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the background image */
 }
 header {
-  background-color: #34739eff;
+  background-color: transparent; /* Remove background color to show the body background */
   flex: 1 0 auto;
 }
 main {
-  background-color: #34739eff;
+  background-color: transparent; /* Remove background color to show the body background */
   flex: 1 0 auto;
 }
 

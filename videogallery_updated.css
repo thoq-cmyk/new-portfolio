@@ -6,7 +6,7 @@
   text-transform: capitalize;
   font-family: 'SewnTight', sans-serif; /* Updated font-family */
   font-weight: bold;
-  background-color: transparent; /* Changed to a lighter background */
+  /* Removed background-color: transparent */
   font-size: large;
 }
 
